@@ -1,0 +1,100 @@
+/* General Styling */
+body {
+    background-color: gray;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: black; /* Changed text color to black */
+    font-size: 1.5rem; /* Increased base font size */
+    position: relative; /* Needed for absolute positioning of decorations */
+    overflow: hidden; /* Prevent overflow of decorations */
+}
+
+/* Add Greek decorations to corners */
+body::before,
+body::after {
+    content: '';
+    position: absolute;
+    background-image: url('path/to/your/greek-decorations.png'); /* Replace with actual image path */
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100px; /* Adjust width as necessary */
+    height: 100px; /* Adjust height as necessary */
+}
+
+body::before {
+    top: 0; /* Position at the top-left */
+    left: 0;
+}
+
+body::after {
+    top: 0; /* Position at the top-right */
+    right: 0;
+}
+
+/* Button Styling */
+button {
+    background-color: blue; /* Blue button background */
+    color: white; /* White text for button */
+    border: none; /* Remove border */
+    padding: 20px 30px; /* Increased padding for larger buttons */
+    font-size: 1.5rem; /* Increased button font size */
+    cursor: pointer; /* Change cursor on hover */
+    border-radius: 8px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth background color transition */
+    z-index: 1; /* Ensure buttons are on top of decorations */
+}
+
+button:hover {
+    background-color: darkblue; /* Darker blue on hover */
+}
+
+/* Hiding Sections */
+.hidden {
+    display: none;
+}
+
+/* Symbol Styling */
+.symbol-container {
+    margin-top: 30px;
+    font-size: 100px; /* You can adjust this size if needed */
+    text-align: center;
+    animation: pulse 2s infinite;
+    z-index: 1; /* Ensure symbols are on top */
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+/* General Styling for Warning Message */
+.warning-message {
+    color: red; /* Red color for warning messages */
+    font-size: 1.5rem; /* Increased font size for visibility */
+    margin-top: 20px; /* Space above the warning */
+}
+
+/* Styles for Game Result Messages */
+.winner {
+    color: green; /* Green color for winner messages */
+    font-size: 2rem; /* Increased font size for visibility */
+}
+
+.loser {
+    color: red; /* Red color for loser messages */
+    font-size: 2rem; /* Increased font size for visibility */
+}
+/* Score Table */
+#score-table {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 8px;
+    color: white; /* Keeping score table text white for contrast */
+    font-size: 1.5rem; /* Increased score table font size */
+    z-index: 1; /* Ensure score table is on top */
+}

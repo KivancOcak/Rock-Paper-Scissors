@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Page 1: Main Menu -->
+    <section id="main-menu">
+        <h1>Welcome to Rock-Paper-Scissors!</h1>
+        <button onclick="showPage('game-mode')">Start Game</button>
+        <button onclick="showPreviousScores()">Show Previous Scores</button>
+        <button onclick="quitGame()">Quit Game</button>
+        <div class="symbol-container">👑 💎 ❤️</div>
+    </section>
+
+    <!-- Page 2: Game Mode Selection -->
+    <section id="game-mode" class="hidden">
+        <h2>Select Game Mode</h2>
+        <button onclick="startNewGame()">New Game</button>
+        <button onclick="continueGame()">Continue with Current Score</button>
+    </section>
+
+    <!-- Page 3: Select Rounds -->
+    <section id="round-selection" class="hidden">
+        <h2>How many rounds would you like to play?</h2>
+        <input type="number" id="round-input" min="1" placeholder="Enter number of rounds">
+        <button onclick="setRounds()">Start Playing</button>
+    </section>
+
+    <!-- Page 4: Play Game -->
+    <section id="game-play" class="hidden">
+        <h2>Choose Your Move</h2>
+        <button onclick="playerMove('rock')">✊ Rock</button>
+        <button onclick="playerMove('paper')">✋ Paper</button>
+        <button onclick="playerMove('scissors')">✌️ Scissors</button>
+        <div id="score-table">Current Round: 0 | User: 0 points | Computer: 0 points</div>
+    </section>
+
+    <!-- Page 5: Results Page -->
+    <section id="results" class="hidden">
+        <h2>Game Results</h2>
+        <p id="final-result"></p>
+        <button onclick="restartGame()">Restart Game</button>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
