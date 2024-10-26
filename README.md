@@ -27,7 +27,7 @@ Clone the Repository
 
 bash
 Kodu kopyala
-git clone https://github.com/yourusername/rock-paper-scissors.git
+git clone https://github.com/KivancOcak/rock-paper-scissors.git
 cd rock-paper-scissors
 Open the Project
 
