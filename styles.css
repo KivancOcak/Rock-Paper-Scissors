@@ -1,4 +1,4 @@
-/* General Styling */
+/* General Styling */ 
 body {
     background-color: gray;
     font-family: 'Arial', sans-serif;
@@ -69,6 +69,7 @@ button:hover {
     50% { transform: scale(1.1); }
     100% { transform: scale(1); }
 }
+
 /* General Styling for Warning Message */
 .warning-message {
     color: red; /* Red color for warning messages */
@@ -86,6 +87,28 @@ button:hover {
     color: red; /* Red color for loser messages */
     font-size: 2rem; /* Increased font size for visibility */
 }
+
+/* Styles for Round Messages */
+.round-message {
+    font-size: 1.5rem; /* Increased font size for visibility */
+    margin-top: 20px; /* Space above the message */
+}
+
+/* Winning message */
+.round-message.winner {
+    color: green; /* Green color for winner messages */
+}
+
+/* Losing message */
+.round-message.loser {
+    color: red; /* Red color for loser messages */
+}
+
+/* Tie message */
+.round-message.tie {
+    color: orange; /* Optional color for tie messages */
+}
+
 /* Score Table */
 #score-table {
     position: absolute;
