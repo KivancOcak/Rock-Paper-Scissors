@@ -1,4 +1,4 @@
-// Variables
+// Variables 
 let userScore = 0;
 let computerScore = 0;
 let rounds = 0;
@@ -34,6 +34,15 @@ function continueGame() {
 function setRounds() {
     const roundInput = document.getElementById('round-input').value;
     rounds = parseInt(roundInput) || 1;
+
+    // Input validation
+    if (rounds <= 0) {
+        document.getElementById("warning-message").innerText = "Please enter a valid number of rounds.";
+        return;
+    } else {
+        document.getElementById("warning-message").innerText = ""; // Clear warning message
+    }
+
     currentRound = 0;
     showPage('game-play');
 }
@@ -41,12 +50,17 @@ function setRounds() {
 // Play Game Logic
 function playerMove(playerChoice) {
     const computerChoice = ['rock', 'paper', 'scissors'][Math.floor(Math.random() * 3)];
+    
+    // Check for tie situation
+    if (playerChoice === computerChoice) {
+        alert(`This round was a Tie! You both selected ${playerChoice}. Try again this round.`);
+        return; // Stay in the same round
+    }
+
     currentRound++;
 
     let result = '';
-    if (playerChoice === computerChoice) {
-        result = "It's a draw!";
-    } else if (
+    if (
         (playerChoice === 'rock' && computerChoice === 'scissors') ||
         (playerChoice === 'paper' && computerChoice === 'rock') ||
         (playerChoice === 'scissors' && computerChoice === 'paper')
@@ -58,32 +72,18 @@ function playerMove(playerChoice) {
         result = 'Computer wins this round!';
     }
 
+    // Show popup message for the round result
+    alert(`Round Result: ${result} \nYou selected: ${playerChoice} \nComputer selected: ${computerChoice}`);
+
     document.getElementById('score-table').textContent = 
         `Current Round: ${currentRound} | User: ${userScore} points | Computer: ${computerScore} points`;
 
+    // Check if game has ended
     if (currentRound >= rounds) {
         showPage('results');
         document.getElementById('final-result').textContent = 
             `Final Score - User: ${userScore} | Computer: ${computerScore}`;
     }
-}
-function askRounds() {
-    const rounds = prompt("How many rounds do you wish to play?");
-    
-    // Check if the input is empty or not a number
-    if (!rounds || isNaN(rounds) || rounds <= 0) {
-        // Display warning message
-        alert("Please enter a valid number of rounds."); // Change to use CSS instead
-        document.getElementById("warning-message").innerText = "Please enter a valid number of rounds.";
-        document.getElementById("warning-message").style.color = "red"; // Set warning message to red
-        return;
-    }
-    
-    roundsCount = parseInt(rounds);
-    currentRound = 1;
-    userScore = 0;
-    computerScore = 0;
-    playGame();
 }
 // Restart Game
 function restartGame() {
