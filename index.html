@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div id="message-box" class="message-box"></div>
+
     <!-- Page 1: Main Menu -->
     <section id="main-menu">
         <h1>Welcome to Rock-Paper-Scissors!</h1>
@@ -28,18 +30,18 @@
         <h2>How many rounds would you like to play?</h2>
         <input type="number" id="round-input" min="1" placeholder="Enter number of rounds">
         <button onclick="setRounds()">Start Playing</button>
-        <div id="warning-message" class="warning-message"></div> <!-- Added warning message element -->
+        <div id="warning-message" class="warning-message"></div>
     </section>
 
-   <!-- Page 4: Play Game -->
-<section id="game-play" class="hidden">
-    <h2>Choose Your Move</h2>
-    <button onclick="playerMove('rock')">✊ Rock</button>
-    <button onclick="playerMove('paper')">✋ Paper</button>
-    <button onclick="playerMove('scissors')">✌️ Scissors</button>
-    <div id="score-table">Current Round: 0 | User: 0 points | Computer: 0 points</div>
-    <div id="round-message" class="round-message"></div> <!-- New div for messages -->
-</section>
+    <!-- Page 4: Play Game -->
+    <section id="game-play" class="hidden">
+        <h2>Choose Your Move</h2>
+        <button onclick="playerMove('rock')">✊ Rock</button>
+        <button onclick="playerMove('paper')">✋ Paper</button>
+        <button onclick="playerMove('scissors')">✌️ Scissors</button>
+        <div id="score-table">Current Round: 0 | User: 0 points | Computer: 0 points</div>
+        <div id="round-message" class="round-message"></div>
+    </section>
 
     <!-- Page 5: Results Page -->
     <section id="results" class="hidden">
